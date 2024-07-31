@@ -1,0 +1,3 @@
+[filter "jupyternotebook"]
+	clean = jupyter nbconvert --to=notebook --clear-output --stdout --log-level=INFO --stdin
+	smudge = cat
