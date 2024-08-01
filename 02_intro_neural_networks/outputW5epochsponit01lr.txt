@@ -1,0 +1,12 @@
+MNIST data loaded: train: 48000 examples, validation: 12000 examples, test: 10000 examples
+Input shape torch.Size([1, 28, 28])
+LinearClassifier(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (layer_1): Linear(in_features=784, out_features=10, bias=True)
+)
+Epoch 0: training loss: 0.9084622383117675, accuracy: 83.0375
+Epoch 1: training loss: 0.6819977807998657, accuracy: 85.26041666666667
+Epoch 2: training loss: 0.5891158788998921, accuracy: 86.3375
+Epoch 3: training loss: 0.5367464733123779, accuracy: 87.0
+Epoch 4: training loss: 0.5023611007531484, accuracy: 87.53541666666666
+Training time: 33.15310788154602 seconds

@@ -1,0 +1,22 @@
+MNIST data loaded: train: 48000 examples, validation: 12000 examples, test: 10000 examples
+Input shape torch.Size([1, 28, 28])
+NonlinearClassifier(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (layers_stack): Sequential(
+    (0): Linear(in_features=784, out_features=50, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=50, out_features=50, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=50, out_features=10, bias=True)
+  )
+)
+Epoch 0: training loss: 0.35781363435586294, accuracy: 89.68541666666667
+Epoch 1: training loss: 0.28287274289131165, accuracy: 91.925
+Epoch 2: training loss: 0.22907939291000365, accuracy: 93.44166666666666
+Epoch 3: training loss: 0.19182118654251099, accuracy: 94.43541666666667
+Epoch 4: training loss: 0.16643188381195068, accuracy: 95.19375
+Training time: 34.20112204551697 seconds
+Validation loss: 0.1734, validation accuracy: 94.80%
+Test loss: 0.1729, test accuracy: 94.59%
+Showing max 10 first failures. The predicted class is shown first and the correct class in parentheses.
+Showing max 10 first failures. The predicted class is shown first and the correct class in parentheses.

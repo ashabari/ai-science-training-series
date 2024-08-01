@@ -1,0 +1,36 @@
+### Summary Report on MNIST Classification Project Using Linear and Nonlinear Classifiers
+
+#### Objective
+The primary goal of this project was to explore and compare the performance of linear and nonlinear classifiers on the MNIST dataset, a well-known dataset of handwritten digits. We aimed to implement, train, evaluate, and visualize the performance of these models.
+
+#### Data Preparation
+The MNIST dataset was loaded and divided into training, validation, and test sets. The training set comprised 48,000 examples, the validation set 12,000 examples, and the test set 10,000 examples. Data loaders were created to facilitate batch processing during model training and evaluation.
+
+#### Model Implementation
+Two types of classifiers were implemented:
+1.Linear Classifier: A simple model with a single linear layer. The linear layers in PyTorch perform a basic xW + b. These "fully connected" layers connect each input to each output with some weight parameter. The linear model outputs a length-10 vector of class probabilities (0 to 1, adding to 1), and cross-entropy loss is used as the loss function.
+
+2. Nonlinear Classifier: A more complex model consisting of multiple linear layers with ReLU activations. This model included additional layers and nonlinearities to capture more complex patterns in the data.
+
+Both models were built using the PyTorch library, which provided a flexible and efficient framework for defining and training neural networks.
+
+#### Training and Evaluation
+The models were trained using the Stochastic Gradient Descent (SGD) optimizer. Training involved multiple steps:
+1. Forward Pass: Input is passed through the network.
+2. Backpropagation: Backward pass to compute the gradient ∂J/∂W of the loss function with respect to the network parameters.
+3. Weight Updates: Weights are updated using the rule W = W - α * ∂J/∂W, where α is the learning rate.
+
+The training process involved iterating through the dataset for multiple epochs, updating model weights to minimize the loss. Different batch sizes and learning rates were experimented with to observe their effects on model performance. 
+
+The performance of the models was evaluated based on accuracy and loss metrics on both the training and validation datasets. Additionally, the test dataset was used to measure the final performance of the trained models. The results showed that the nonlinear classifier outperformed the linear classifier in terms of accuracy and lower loss values.
+
+#### Visualization and Analysis
+To understand the behavior of the models, the first 10 images from the training set were visualized along with their predicted labels. Furthermore, a function was implemented to display misclassified images, highlighting the differences between predicted and true labels. This helped in identifying specific examples where the models struggled.
+
+#### Regularization Techniques
+To improve the generalization of the models on previously unseen data, regularization techniques such as dropout and weight penalization (λ ||W||^2) were employed. Dropout randomly sets input units to 0 at each step during training to prevent overfitting. Penalizing the loss function by adding a term controlling the magnitude of the weights also helped improve the model's performance.
+
+#### Conclusion
+This project demonstrated the significant performance improvement that can be achieved by using nonlinear models over linear models for image classification tasks. The nonlinear classifier's ability to capture more complex patterns in the data led to higher accuracy and better overall performance. The visualization of failures provided valuable insights into areas where the models could be further improved. 
+
+Overall, this project underscored the importance of model complexity, choice of batch size, learning rate, and regularization techniques in achieving higher accuracy in image classification tasks. It provided a comprehensive framework for training and evaluating neural networks using the MNIST dataset.
