@@ -1,0 +1,30 @@
+I delved into large language modeling (LLM) by building a generic tokenizer and visualizing token embeddings from Mark Twain's Life On The Mississippi. This project highlighted the intricacies of sequential data modeling and its application in Natural Language Processing (NLP).
+
+Code Implementation
+Generic Tokenizer:
+I developed a tokenizer to preprocess and analyze the text data. The tokenizer performs the following steps:
+
+Text Cleaning: Non-ASCII characters (including Byte-Order Marks) were removed using regular expressions to ensure the text is purely in ASCII format.
+Punctuation Removal: Punctuation marks were stripped from the text using Python's string module. This step is essential for focusing on word tokens rather than punctuation.
+Normalization: All text was converted to lowercase to ensure that variations in capitalization do not affect token frequency counts.
+After cleaning and normalizing the text, we computed the frequency of each token. The tokenizer generated a frequency dictionary (wdict), which was used to calculate:
+
+Total Number of Tokens: The sum of all token occurrences.
+Distinct Tokens for Coverage: I identified how many unique tokens account for 90% of the total word occurrences. This helps in understanding the vocabulary's efficiency in representing the majority of the text data.
+The resulting output showed the vocabulary size, total number of tokens, and the number of tokens representing 90% of the corpus. This was followed by calculating the proportion of these tokens relative to the vocabulary size, providing insight into the lexical density and token distribution.
+
+Token Embedding Visualization:
+The template is taken from the Argonne AI workshop. We utilized BERT embeddings to visualize token representations. The process involved:
+
+Loading BERT Model and Tokenizer: We loaded the bert-large-uncased-whole-word-masking model and its corresponding tokenizer.
+Extracting Embeddings: We retrieved the input embeddings from BERT and converted them to NumPy arrays for further processing.
+Dimensionality Reduction with t-SNE: To visualize these embeddings, we used t-SNE (t-distributed Stochastic Neighbor Embedding) to reduce the high-dimensional token embeddings to a 2D space. This reduction facilitates the visualization of token clusters and their relationships.
+Plotting: We plotted the 2D projections of the embeddings and annotated them with token names to observe how tokens with similar contexts group together.
+The visualization provides a spatial representation of token embeddings, helping us understand the semantic similarity and clustering of words based on their contextual usage in the model.
+
+Theoretical Insights
+This project emphasizes the fundamentals of sequential data modeling, particularly in the context of LLMs. Text prediction models like those in NLP generate tokens sequentially, with each token being influenced by the preceding tokens. This sequential nature leads to the generation of text that may lack coherence and context beyond immediate token relationships.
+
+The choice of model architecture is crucial. While convolutional neural networks (CNNs) are effective for spatially-structured data (e.g., images), transformers are designed for sequential data, capturing dependencies across varying lengths of text sequences.
+
+Overall, Project 4 demonstrated the application of tokenization and embedding techniques in understanding and visualizing textual data, bridging practical tools with theoretical concepts in sequential data modeling.
