@@ -1,0 +1,30 @@
+Objective:
+The goal of this project was to design and evaluate a convolutional neural network (CNN) with a focus on implementing convolutional layers, normalization, and downsampling techniques. The CNN was applied to an image classification task, using the CIFAR-10 dataset. Key objectives included assessing the impact of network architecture on model performance and optimizing the network to improve classification accuracy.
+
+Data Preparation:
+The CIFAR-10 dataset, consisting of 60,000 32x32 color images in 10 classes, was used for training and evaluation. The data was preprocessed with normalization to standardize pixel values, enhancing the model’s convergence speed and stability. Transformations included random horizontal flips and normalization of pixel values to mean 0.0 and standard deviation 1.0.
+
+Model Implementation:
+The CNN architecture utilized multiple layers of convolution, normalization, and downsampling:
+
+Convolutions: Convolutional layers were employed to extract features from images by applying kernels that capture local patterns. These layers exploit the spatial hierarchies in the data, leveraging the inductive bias that neighboring pixels are correlated. The initial convolutional layer uses a kernel size of 3x3 to effectively capture local features from the input images.
+
+Normalization: LayerNorm was incorporated to stabilize training by normalizing activations, which allows the use of higher learning rates and accelerates convergence. This technique ensures that the training process remains stable and improves the efficiency of the optimization.
+
+Downsampling: This technique was used to reduce the spatial dimensions of the feature maps, bringing distant information closer and facilitating the learning of large-range features. Downsampling layers effectively address the vanishing gradients problem by making the model deeper and improving gradient flow.
+
+Number of Filters in Each Layer: The architecture starts with 64 filters in the initial convolutional layer, increasing to 256 filters in intermediate layers. This progression in the number of filters enables the model to capture increasingly complex features from the images. The number of filters is then reduced in subsequent layers to balance feature extraction and computational efficiency.
+
+Regularization Technique: Dropout was employed as a regularization technique in the final fully connected layer, with a dropout rate of 0.5. This method helps prevent overfitting by randomly deactivating a portion of neurons during training, thus improving the model's ability to generalize to unseen data.
+
+Architecture: The model was designed with a total of 15 ConvNextBlocks, each consisting of convolutional operations followed by normalization. This complex architecture allows the model to capture both local and global features from the input images effectively.
+
+Training and Evaluation:
+The network was trained for 15 epochs. The following observations were made:
+
+Training Loss and Accuracy: The model demonstrated significant improvement in training accuracy over the epochs, with a reduction in training loss from 1.907 in the initial epoch to 0.225 by the 15th epoch. Training accuracy improved from 30.29% to 92.16%.
+Validation Loss and Accuracy: Validation loss and accuracy also showed steady improvement, indicating effective generalization to unseen data. The final validation accuracy reached 73.56%, and the validation loss was 0.900.
+Test Performance: On the test set, the model achieved an accuracy of 73.92% with a test loss of 0.857.
+
+Conclusion:
+The convolutional neural network implemented with normalization and downsampling demonstrated effective learning capabilities for the CIFAR-10 image classification task. The use of convolutions allowed the model to leverage spatial hierarchies, while normalization stabilized training and enabled higher learning rates. Downsampling improved the model’s ability to learn large-range features and mitigated issues related to vanishing gradients. The model's performance improved significantly over 15 epochs, with notable gains in both training and validation accuracy. Future work could involve further architectural adjustments or the application of advanced regularization techniques to enhance performance.
