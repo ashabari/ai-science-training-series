@@ -1,0 +1,14 @@
+Objective:
+The objective of this project was to investigate the impact of varying embedding dimensions (n_embd) on the performance of a language model. We aimed to understand how changes in n_embd affect the model's ability to learn and generalize, using metrics such as loss and perplexity.
+
+Data Preparation:
+For this project, we used a dataset of textual data and preprocessed it using standard tokenization methods. The text was tokenized and converted into sequences suitable for model training. The dataset was split into training and validation sets to evaluate the model's performance on unseen data.
+
+Model Implementation:
+We implemented a Transformer-based language model with varying embedding dimensions: 64, 128, 256, and 512. Each model configuration was evaluated using the GPT2LMHeadModel architecture, which utilizes masked self-attention and feed-forward neural networks. The models were trained for 4990 steps with consistent training parameters, allowing for a direct comparison of performance metrics.
+
+Visualization and Analysis:
+The training and validation losses, along with perplexity scores, were plotted to visualize the impact of different embedding dimensions. The analysis revealed that as n_embd increased, both training and validation perplexities decreased, indicating improved model performance. Specifically, n_embd = 256 showed the most significant improvement in reducing perplexity, while n_embd = 512 offered only marginal gains compared to n_embd = 256.
+
+Conclusion:
+Increasing the embedding dimension generally enhances the model’s performance by allowing it to capture more complex representations of the input data. The optimal embedding dimension in this study was n_embd = 256, which provided the best trade-off between performance and computational efficiency. Larger dimensions like n_embd = 512 resulted in diminishing returns, highlighting the importance of balancing model capacity with resource constraints.
